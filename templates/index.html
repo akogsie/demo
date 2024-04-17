@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>																									
+<head>																									
+<title>CBN Knowlege Bot</title>																									
+<link rel="stylesheet" href="static/main.css" />																									
+<style>																									
+.center {																									
+display: flex;																									
+justify-content: center;																									
+flex-direction: column;																									
+align-items: center; /* Center align children elements */																									
+}		
+
+
+
+textarea {																									
+width: 700px;																									
+height: 150px;																									
+font-size: 20px;																									
+box-sizing: border-box;																									
+margin-top: 10px;																									
+}					
+
+
+
+input[type="submit"] {																									
+margin-top: 10px;																									
+width: 300px;																									
+}																									
+</style>																									
+</head>																									
+<body>																									
+<img src="static/ai-robot.png" class="icon" style="width: 200px"/>			
+<h3>Hello, I am your AI Knowlege Bot</h3>																						
+<form action="/cbn_chat_bot" method="post">																									
+<div class="center">																									
+<textarea name="user_input" placeholder="Enter a question and I will respond" required ></textarea>																									
+<input type="submit" value="Hello, Ask me a question" />																								
+</div>																									
+</form>																									
+{% if result %}																									
+<pre style="font-size: 20px; width: 50%; white-space: pre-wrap; word-wrap: break-word;">User Question : {{ user_input}}</pre>																									
+<pre style="font-size: 20px; width: 50%; white-space: break-spaces; word-wrap: break-word;">CBN Bot : {{ result }}</pre>																									
+{% endif %}																									
+																									
+</body>																									
+																									
